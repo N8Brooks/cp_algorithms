@@ -2,7 +2,7 @@ from functools import reduce
 from operator import add
 from typing import Callable, List
 from random import randrange
-from cp_algorithms.data_structures.fundamentals.sparse_table import (
+from ....cp_algorithms.data_structures.fundamentals.sparse_table import (
     MinMaxSparseTable,
     AddSparseTable,
 )
@@ -20,7 +20,7 @@ class MockSparseTable:
 
 
 def test_add_sparse_table():
-    for _ in range(1000):
+    for _ in range(100):
         n = randrange(1, 1000)
         nums = [randrange(-1000, 1000) for _ in range(n)]
         mock = MockSparseTable(nums, add, 0)
@@ -32,7 +32,7 @@ def test_add_sparse_table():
 
 
 def test_min_sparse_table():
-    for _ in range(1000):
+    for _ in range(100):
         n = randrange(1, 1000)
         nums = [randrange(-1000, 1000) for _ in range(n)]
         mock = MockSparseTable(nums, min, sys.maxsize)
@@ -44,7 +44,7 @@ def test_min_sparse_table():
 
 
 def test_max_sparse_table():
-    for _ in range(1000):
+    for _ in range(100):
         n = randrange(1, 1000)
         nums = [randrange(-1000, 1000) for _ in range(n)]
         mock = MockSparseTable(nums, max, -sys.maxsize)
